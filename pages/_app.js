@@ -40,7 +40,7 @@ class MyApp extends App {
             size="medium"
             logo="https://uploads.divjoy.com/logo.svg"
             description="A short description of what you do here"
-            copyright="© Company Name"
+            copyright="© 2019 Konbit Bibliyotek Site Soley"
           />
         </>
       </ProvideAuth>

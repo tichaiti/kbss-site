@@ -13,19 +13,8 @@ import fakeAuth from "fake-auth";
   */
 
 const authContext = createContext();
-
-// Provider component that wraps your app and makes auth object ...
-// ... available to any child component that calls useAuth().
-export function ProvideAuth({ children }) {
-  const auth = useProvideAuth();
-  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
-}
-
-// Hook for child components to get the auth object ...
-// ... update when it changes.
-export const useAuth = () => {
-  return useContext(authContext);
-};
+const getFromQueryString = key =>
+  queryString.parse(window.location.search)[key];
 
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
@@ -51,10 +40,7 @@ function useProvideAuth() {
     });
   };
 
-  const sendPasswordResetEmail = email => {
-    return fakeAuth.sendPasswordResetEmail(email);
-  };
-
+  const { sendPasswordResetEmail } = fakeAuth;
   const confirmPasswordReset = (password, code) => {
     // If no reset code passed in then fetch it automatically from current url.
     // [CHANGING AUTH SERVICES]: If not passing in the code as the second ...
@@ -69,9 +55,8 @@ function useProvideAuth() {
   // ... function so depending on your service you may need to remove  ...
   // ... this effect and use the commented out one below.
   useEffect(() => {
-    const unsubscribe = fakeAuth.onChange(user => {
-      setUser(user);
-    });
+    const unsubscribe = fakeAuth
+      .onChange(user => setUser(user));
 
     // Call unsubscribe on cleanup
     return () => unsubscribe();
@@ -99,6 +84,13 @@ function useProvideAuth() {
   };
 }
 
-const getFromQueryString = key => {
-  return queryString.parse(window.location.search)[key];
-};
+// Provider component that wraps your app and makes auth object ...
+// ... available to any child component that calls useAuth().
+export function ProvideAuth({ children }) {
+  const auth = useProvideAuth();
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+}
+
+// Hook for child components to get the auth object ...
+// ... update when it changes.
+export const useAuth = () => useContext(authContext);

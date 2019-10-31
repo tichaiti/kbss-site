@@ -47,9 +47,9 @@ function AboutPage(props) {
       <CtaSection
         color="primary"
         size="medium"
-        title="Ready to get started?"
+        title="Find out how you can contribute!"
         subtitle=""
-        buttonText="Get Started"
+        buttonText="Donate"
         buttonOnClick={() => {
           router.push("/pricing");
         }}

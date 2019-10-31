@@ -6,16 +6,17 @@
     "divjoy"
   ],
   "dependencies": {
-    "react": "16.10.2",
-    "react-dom": "16.10.2",
-    "next": "9.1.2-canary.7",
+    "@analytics/google-analytics": "0.2.0",
     "@zeit/next-sass": "0.2.1-canary.4",
-    "node-sass": "4.12.0",
-    "bulma": "0.7.5",
-    "query-string": "6.8.3",
-    "fake-auth": "0.0.5",
     "analytics": "0.2.6",
-    "@analytics/google-analytics": "0.2.0"
+    "bulma": "0.7.5",
+    "fake-auth": "0.0.5",
+    "ky": "^0.15.0",
+    "next": "9.1.2-canary.7",
+    "node-sass": "4.12.0",
+    "query-string": "6.8.3",
+    "react": "16.10.2",
+    "react-dom": "16.10.2"
   },
   "scripts": {
     "dev": "next",

@@ -30,7 +30,7 @@ function IndexPage(props) {
       <ClientsSection
         color="light"
         size="medium"
-        title="You're in good company"
+        title="Our partners along the way"
         subtitle=""
       />
       <TestimonialsSection
@@ -42,9 +42,9 @@ function IndexPage(props) {
       <CtaSection
         color="primary"
         size="medium"
-        title="Ready to get started?"
+        title="Find out how you can help!"
         subtitle=""
-        buttonText="Get Started"
+        buttonText="Contribute"
         buttonOnClick={() => {
           router.push("/pricing");
         }}

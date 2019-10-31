@@ -1,4 +1,4 @@
-### <p align="center"><b>This project was created with [Divjoy](https://divjoy.com?ref=readme) ✨</b></p>
+### <p align="center"><b>Konbit Bilbiyotèk Site Solèy✨</b></p>
 
 ## 👉 Get Started
 Install dependencies
