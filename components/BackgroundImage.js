@@ -1,6 +1,5 @@
 import React from "react";
 import styled from '@emotion/styled';
-// import "./BackgroundImage.scss";
 
 const BackgroundImage = styled.div(props => `
   content: "";
@@ -17,15 +16,3 @@ const BackgroundImage = styled.div(props => `
 `);
 
 export default BackgroundImage;
-
-// function BackgroundImage(props) {
-//   return (
-//     <div
-//       className="BackgroundImage"
-//       style={{
-//         "--image": `url(${props.image})`,
-//         "--opacity": props.opacity
-//       }}
-//     />
-//   );
-// }
