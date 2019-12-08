@@ -10,7 +10,7 @@ const Copyright = styled.p`
 `;
 
 function Footer(props) {
-  const {color, logo, size, description, copyright} = props;
+  const { color, logo, size, description, copyright } = props;
   return (
     <Section color={props.color} size={props.size}>
       <div className="FooterComponent__container container">
