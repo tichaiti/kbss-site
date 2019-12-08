@@ -1,8 +1,13 @@
 import React from "react";
-import "./Divider.scss";
+import styled from '@emotion/styled';
 
-function Divider(props) {
-  return <div className={`Divider has-background-${props.color}`} />;
-}
+
+const Line = styled.div`
+  width: 100%;
+  height: 1px;
+`;
+
+const Divider = props => 
+  <Line className={`has-background-${props.color}`} />
 
 export default Divider;

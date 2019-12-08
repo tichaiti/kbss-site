@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import HeroSection from "./../components/HeroSection";
 import FeaturesSection from "./../components/FeaturesSection";
 import ClientsSection from "./../components/ClientsSection";
@@ -8,15 +9,16 @@ import { useRouter } from "next/router";
 
 function IndexPage(props) {
   const router = useRouter();
+  const { t, i18n } = useTranslation();
 
   return (
     <>
       <HeroSection
         color="primary"
         size="large"
-        title="Your landing page title here"
-        subtitle="This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan."
-        buttonText="Start Free Trial"
+        title={t('site_name')}
+        subtitle={t('getting_started')}
+        buttonText={t('support_cta')}
         buttonOnClick={() => {
           router.push("/pricing");
         }}
@@ -42,9 +44,9 @@ function IndexPage(props) {
       <CtaSection
         color="primary"
         size="medium"
-        title="Find out how you can help!"
+        title={t('help_cta')}
         subtitle=""
-        buttonText="Contribute"
+        buttonText={t('contribute')}
         buttonOnClick={() => {
           router.push("/pricing");
         }}

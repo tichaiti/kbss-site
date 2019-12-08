@@ -1,40 +1,33 @@
 import React from "react";
+import { isClass as is } from '../util';
 
-function SectionButton(props) {
-  const {
-    parentColor,
-    size,
-    state,
-    fullWidth,
-    // Passed to button element
-    ...otherProps
-  } = props;
+const colors = [ "primary", "info", "success", "warning", "danger", "black", "dark" ];
+function SectionButton({ 
+  parentColor, 
+  size, 
+  state, 
+  fullWidth, 
+  children, 
+  ...props}) {  
+
+  const color = colors.includes(parentColor) 
+    && `${is(parentColor)} is-inverted`;
+
+  const shade = ["white", "light"].includes(parentColor) 
+    || !parentColor && "is-primary";
+    
+  const classes = [
+    'button', 
+    color, 
+    shade, 
+    is(size), 
+    is(color), 
+    (fullWidth && 'is-fullwidth')
+  ].join(' ');
 
   return (
-    <button
-      className={
-        "button" +
-        ([
-          "primary",
-          "info",
-          "success",
-          "warning",
-          "danger",
-          "black",
-          "dark"
-        ].includes(parentColor)
-          ? ` is-${parentColor} is-inverted`
-          : "") +
-        (["white", "light"].includes(parentColor) || !parentColor
-          ? " is-primary"
-          : "") +
-        (size ? ` is-${size}` : "") +
-        (state ? ` is-${state}` : "") +
-        (fullWidth ? " is-fullwidth" : "")
-      }
-      {...otherProps}
-    >
-      {props.children}
+    <button className={classes} {...props} >
+      {children}
     </button>
   );
 }
