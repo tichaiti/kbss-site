@@ -1,36 +1,34 @@
 import React from "react";
+import styled from '@emotion/styled';
 import BackgroundImage from "./BackgroundImage";
-import "./Section.scss";
+import { isClass as is } from '../util';
 
-function Section(props) {
-  const {
-    color,
-    size,
-    backgroundImage,
-    backgroundImageOpacity,
-    children,
-    // Passed to section element
-    ...otherProps
-  } = props;
+
+const Container = styled.section`
+  &.is-white  {
+    border-top: 1px solid #F0F0F0;
+  }
+`;
+
+function Section({ 
+  color, 
+  size, 
+  backgroundImage, 
+  backgroundImageOpacity, 
+  children, 
+  ...props}) {
+  const classes = `ContainerComponent hero section is-block is-relative ${is(color)} ${is(size)}` 
 
   return (
-    <section
-      className={
-        "SectionComponent hero section is-block is-relative" +
-        (color ? ` is-${color}` : "") +
-        (size ? ` is-${size}` : "")
-      }
-      {...otherProps}
-    >
+    <Container className={classes} {...props}>
       {backgroundImage && (
-        <BackgroundImage
-          image={backgroundImage}
-          opacity={backgroundImageOpacity}
-        />
+        <BackgroundImage 
+          image={backgroundImage} 
+          opacity={backgroundImageOpacity} />
       )}
 
-      {props.children}
-    </section>
+      {children}
+    </Container>
   );
 }
 

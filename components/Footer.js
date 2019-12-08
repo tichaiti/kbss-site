@@ -1,9 +1,16 @@
 import React from "react";
+import styled from '@emotion/styled';
 import Section from "./Section";
 import Link from "next/link";
 import "./Footer.scss";
 
+const Copyright = styled.p`
+  margin-top: 2rem;
+  color: hsl(0, 0%, 50%);
+`;
+
 function Footer(props) {
+  const {color, logo, size, description, copyright} = props;
   return (
     <Section color={props.color} size={props.size}>
       <div className="FooterComponent__container container">
@@ -27,9 +34,7 @@ function Footer(props) {
               </p>
             )}
 
-            {props.copyright && (
-              <p className="FooterComponent__copywrite">{props.copyright}</p>
-            )}
+            {copyright && <Copyright>{`© 2019 ${props.copyright}`}</Copyright>}
           </div>
           <div className="column is-7 is-6-widescreen is-offset-2-widescreen">
             <div className="columns">
