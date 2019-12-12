@@ -11,7 +11,7 @@ export default function Layout({children}) {
       <Navbar
         color="primary"
         spaced={true}
-        logo="https://uploads.divjoy.com/logo-white.svg"
+        logo="https://kbss-site-web.s3.amazonaws.com/kbss-Icon0.png"
       />
 
       {children}
