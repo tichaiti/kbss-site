@@ -3,3 +3,25 @@
     max-width: 850px;
   }
 }
+
+.intro-and-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  margin-right: 70px;
+}
+
+.phone-info,
+.location,
+.email {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0px;
+}
+
+i {
+  color: #3592cc;
+  padding-right: 15px;
+}

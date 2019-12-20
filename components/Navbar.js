@@ -62,6 +62,11 @@ function Navbar(props) {
             )}
           </div>
         </div>
+        <div>
+          <Link href="/contact">
+            <a className="navbar-item">Contact us</a>
+          </Link>
+        </div>
       </div>
     </NavbarContainer>
   );

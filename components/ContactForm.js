@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import FormStatus from "./FormStatus";
-import FormField from "./FormField";
-import SectionButton from "./SectionButton";
+import React, { useState } from 'react';
+import FormStatus from './FormStatus';
+import FormField from './FormField';
+import SectionButton from './SectionButton';
+import './ContactSection.scss';
 
 function ContactForm(props) {
   // State for input values
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   // Whether to show errors
   // We set to true if they submit and there are errors.
@@ -24,21 +25,21 @@ function ContactForm(props) {
   };
 
   // Function to see if field is empty
-  const isEmpty = val => val.trim() === "";
+  const isEmpty = val => val.trim() === '';
 
   // Add error if email empty
   if (isEmpty(email)) {
     errors.push({
-      field: "email",
-      message: "Please enter an email"
+      field: 'email',
+      message: 'Please enter an email'
     });
   }
 
   // Add error if message empty
   if (isEmpty(message)) {
     errors.push({
-      field: "message",
-      message: "Please enter a message"
+      field: 'message',
+      message: 'Please enter a message'
     });
   }
 
@@ -46,8 +47,8 @@ function ContactForm(props) {
   if (props.showNameField) {
     if (isEmpty(name)) {
       errors.push({
-        field: "name",
-        message: "Please enter your name"
+        field: 'name',
+        message: 'Please enter your name'
       });
     }
   }
@@ -81,49 +82,49 @@ function ContactForm(props) {
           handleSubmit();
         }}
       >
-        <div className="field is-horizontal">
-          <div className="field-body">
+        <div className='field is-horizontal'>
+          <div className='field-body'>
+            <FormField
+              value={email}
+              type='email'
+              placeholder='Email'
+              error={showErrors && getError('email')}
+              onChange={value => setEmail(value)}
+            />
+
             {props.showNameField && (
               <FormField
                 value={name}
-                type="text"
-                placeholder="Name"
-                error={showErrors && getError("name")}
+                type='text'
+                placeholder='Name'
+                error={showErrors && getError('name')}
                 onChange={value => setName(value)}
               />
             )}
-
-            <FormField
-              value={email}
-              type="email"
-              placeholder="Email"
-              error={showErrors && getError("email")}
-              onChange={value => setEmail(value)}
-            />
           </div>
         </div>
-        <div className="field is-horizontal">
-          <div className="field-body">
+        <div className='field is-horizontal'>
+          <div className='field-body'>
             <FormField
               value={message}
-              type="textarea"
-              placeholder="Message"
-              error={showErrors && getError("message")}
+              type='textarea'
+              placeholder='Message'
+              error={showErrors && getError('message')}
               onChange={value => setMessage(value)}
             />
           </div>
         </div>
-        <div className="field is-horizontal">
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
+        <div className='field is-horizontal'>
+          <div className='field-body'>
+            <div className='field'>
+              <div className='control'>
                 <SectionButton
                   parentColor={props.parentColor}
-                  size="medium"
+                  size='medium'
                   state={
-                    props.status && props.status.type === "pending"
-                      ? "loading"
-                      : "normal"
+                    props.status && props.status.type === 'pending'
+                      ? 'loading'
+                      : 'normal'
                   }
                 >
                   {props.buttonText}

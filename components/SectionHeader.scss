@@ -1,6 +1,9 @@
 .SectionHeader {
   &__header {
     margin-bottom: 3rem;
+    #title {
+      color: #ffc300;
+    }
 
     // Remove margin if nothing after header
     &:last-child {
