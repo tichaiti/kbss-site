@@ -1,8 +1,16 @@
 import React from "react";
+import dynamic from 'next/dynamic';
+
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Contact from "./Contact";
+import ContactInfo from "./ContactInfo";
 import "./ContactSection.scss";
+
+const KBSSMap = dynamic(
+  () => import('../components/Map'),
+  { ssr: false }
+);
 
 function ContactSection(props) {
   return (
@@ -19,6 +27,8 @@ function ContactSection(props) {
           showNameField={props.showNameField}
           buttonText={props.buttonText}
         />
+        <KBSSMap />
+        <ContactInfo />
       </div>
     </Section>
   );
