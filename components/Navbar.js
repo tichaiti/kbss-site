@@ -14,7 +14,7 @@ function Navbar(props) {
           <div className="navbar-item">
             <Link href="/">
               <a>
-                <img className="image" src={props.logo} alt="Logo" />
+                <img className="image" src={props.logo} alt="Logo" width="100" />
               </a>
             </Link>
           </div>

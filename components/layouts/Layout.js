@@ -11,7 +11,7 @@ export default function Layout({children}) {
       <Navbar
         color="primary"
         spaced={true}
-        logo="https://kbss-site-web.s3.amazonaws.com/kbss-Icon0.png"
+        logo="https://kbss.s3.amazonaws.com/kbss-Icon.png"
       />
 
       {children}
@@ -20,7 +20,7 @@ export default function Layout({children}) {
       <Footer
         color="light"
         size="medium"
-        logo="https://uploads.divjoy.com/logo.svg"
+        logo="https://kbss.s3.amazonaws.com/kbss-Icon.png"
         description={t('mission_desc')}
         copyright={t('site_name')}
       />
