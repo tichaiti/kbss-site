@@ -87,7 +87,7 @@ function Footer(props) {
                   <ul className="menu-list">
                     <li>
                       <a
-                        href="https://facebook.com"
+                        href="https://www.facebook.com/KBSSHAITI/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -100,7 +100,7 @@ function Footer(props) {
                     </li>
                     <li>
                       <a
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/kbsshaiti/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -113,7 +113,7 @@ function Footer(props) {
                     </li>
                     <li>
                       <a
-                        href="https://twitter.com"
+                        href="https://twitter.com/kbsshaiti"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

@@ -1,5 +1,23 @@
 .ContactSection {
   &__container {
     max-width: 850px;
+
+    #kbss-map {
+      margin-top: 10px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+
+      &__section {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
+
+      &__detail {
+        margin-left: 20px;
+      }
+    }
   }
 }
