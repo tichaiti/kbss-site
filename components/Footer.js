@@ -14,7 +14,7 @@ function Footer(props) {
   return (
     <Section color={props.color} size={props.size}>
       <div className="FooterComponent__container container">
-        <div className="columns">
+        <div className="columns footer__section">
           <div className="column is-5 is-4-widescreen">
             <Link href="/">
               <a className="brand">
