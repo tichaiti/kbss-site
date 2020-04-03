@@ -2,11 +2,12 @@ import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Testimonials from "./Testimonials";
+import articles from "./data/articles.json";
 
 // Import css files
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
-import './YouTubeSection.scss';
+import "./YouTubeSection.scss";
 
 function RenderYouTubeVideos(list) {
   if (!list.length) {
@@ -15,12 +16,12 @@ function RenderYouTubeVideos(list) {
 
   const videos = list.map(videoId => {
     return (
-      <div className="youtube-video">
+      <div className="youtube-video columns">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           frameBorder="0"
+          className="column"
           allow="autoplay; encrypted-media"
-          height="500"
           allowFullScreen
           title="video"
         />
@@ -29,6 +30,33 @@ function RenderYouTubeVideos(list) {
   });
 
   return videos;
+}
+
+function RenderArticle(articles) {
+  if (!articles.length) {
+    return null;
+  }
+
+  const listOfArticles = articles.map((article) => {
+    // JSX
+    return (
+      <div className="columns text-section">
+        <div
+          style={{ backgroundImage: `url("https://via.placeholder.com/150"` }}
+          className="column is-one-fifth image-container"
+        >
+        </div>
+        <div className="column">
+          <h2>
+            <a href={`${article.link}`}>{article.title}</a>
+          </h2>
+          <p>{article.body}</p>
+        </div>
+      </div>
+    );
+  });
+
+  return listOfArticles;
 }
 
 function YouTubeSection(props) {
@@ -43,13 +71,12 @@ function YouTubeSection(props) {
     "37cWAUnK_YM"
   ];
 
-  // TODO: remove slidesPerView and spaceBetween on Mobile
   const params = {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true
     }
   };
 
@@ -63,6 +90,8 @@ function YouTubeSection(props) {
           size={3}
         />
         <Swiper {...params}>{RenderYouTubeVideos(listOfVideos)}</Swiper>
+
+        {RenderArticle(articles)}
       </div>
     </Section>
   );

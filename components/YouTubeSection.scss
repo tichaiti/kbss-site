@@ -1,22 +1,31 @@
 .YouTubeSection {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .swiper-container {
-        height: 300px;
-        border-radius: 4px;
-        // width: 50%;
+    .swiper-wrapper {
+        margin-bottom: 30px;
     }
     
     .youtube-video {
-        // height: 200px;
+        margin: 0px;
     }
 
     iframe {
         text-align: center;
-        height: 250px;
+        height: 500px;
     }
+
+    .text-section div {
+        border: 1px solid lightgrey;
+        position: relative;
+        height: 150px;
+        margin: 5px 25px;
+    }
+
+    .text-section .image-container {
+        // background-image: url("https://via.placeholder.com/150");
+    }
+
+    // .text-section img {
+    //     width: 100%;
+    //     position: absolute;
+    // }
 }
