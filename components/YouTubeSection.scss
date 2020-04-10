@@ -11,21 +11,43 @@
     iframe {
         text-align: center;
         height: 500px;
+        width: 100%;
     }
 
     .text-section div {
         border: 1px solid lightgrey;
         position: relative;
+        border-radius: 4px;
         height: 150px;
         margin: 5px 25px;
     }
 
     .text-section .image-container {
-        // background-image: url("https://via.placeholder.com/150");
+        position: relative;
+        max-height: 167px;
     }
 
-    // .text-section img {
-    //     width: 100%;
-    //     position: absolute;
-    // }
+    @media (max-width: 768px) {
+        .text-section .image-container {
+            margin: 0px 10px;
+            width: 100px;
+            max-height: 100px;
+        }
+
+        .text-section div {
+            margin-bottom: 45px;
+            height: auto;
+        }
+
+        iframe {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 414px) {
+        iframe {
+            height: auto;
+        }
+    }
+
 }

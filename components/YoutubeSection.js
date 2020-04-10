@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
-import Testimonials from "./Testimonials";
 import articles from "./data/articles.json";
 
 // Import css files
@@ -14,11 +13,11 @@ function RenderYouTubeVideos(list) {
     return null;
   }
 
-  const videos = list.map(videoId => {
+  const videos = list.map(youtubeVideoId => {
     return (
       <div className="youtube-video columns">
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}`}
+          src={`https://www.youtube.com/embed/${youtubeVideoId}`}
           frameBorder="0"
           className="column"
           allow="autoplay; encrypted-media"
@@ -41,14 +40,14 @@ function RenderArticle(articles) {
     // JSX
     return (
       <div className="columns text-section">
-        <div
-          style={{ backgroundImage: `url("https://via.placeholder.com/150"` }}
+        <img
+          src={`${article.imageUrl}`}
           className="column is-one-fifth image-container"
-        >
-        </div>
+          alt={`${article.title}`}
+        />
         <div className="column">
           <h2>
-            <a href={`${article.link}`}>{article.title}</a>
+            <a href={`${article.link}`} target="_blank">{article.title}</a>
           </h2>
           <p>{article.body}</p>
         </div>
