@@ -1,6 +1,8 @@
 import React from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
+// import RenderYouTubeVideo from "./RenderYouTubeVideo";
+import DisplayArticles from "./DisplayArticles";
 import articles from "./data/articles.json";
 
 // Import css files
@@ -13,9 +15,9 @@ function RenderYouTubeVideos(list) {
     return null;
   }
 
-  const videos = list.map(youtubeVideoId => {
+  const videos = list.map((youtubeVideoId, index) => {
     return (
-      <div className="youtube-video columns">
+      <div className="youtube-video columns" key={index}>
         <iframe
           src={`https://www.youtube.com/embed/${youtubeVideoId}`}
           frameBorder="0"
@@ -29,33 +31,6 @@ function RenderYouTubeVideos(list) {
   });
 
   return videos;
-}
-
-function RenderArticle(articles) {
-  if (!articles.length) {
-    return null;
-  }
-
-  const listOfArticles = articles.map((article) => {
-    // JSX
-    return (
-      <div className="columns text-section">
-        <img
-          src={`${article.imageUrl}`}
-          className="column is-one-fifth image-container"
-          alt={`${article.title}`}
-        />
-        <div className="column">
-          <h2>
-            <a href={`${article.link}`} target="_blank">{article.title}</a>
-          </h2>
-          <p>{article.body}</p>
-        </div>
-      </div>
-    );
-  });
-
-  return listOfArticles;
 }
 
 function YouTubeSection(props) {
@@ -90,7 +65,7 @@ function YouTubeSection(props) {
         />
         <Swiper {...params}>{RenderYouTubeVideos(listOfVideos)}</Swiper>
 
-        {RenderArticle(articles)}
+        <DisplayArticles articles={articles}/>
       </div>
     </Section>
   );
