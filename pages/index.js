@@ -5,6 +5,7 @@ import FeaturesSection from "./../components/FeaturesSection";
 import ClientsSection from "./../components/ClientsSection";
 import TestimonialsSection from "./../components/TestimonialsSection";
 import CtaSection from "./../components/CtaSection";
+import TwitterTimeLine from "./../components/TwitterTimeLine";
 import { useRouter } from "next/router";
 
 function IndexPage(props) {
@@ -51,6 +52,8 @@ function IndexPage(props) {
           router.push("/pricing");
         }}
       />
+
+      <TwitterTimeLine/>
     </>
   );
 }
